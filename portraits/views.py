@@ -6,6 +6,6 @@ from .models import Portrait
 
 def welcome(request):
 
-    name = Portrait.name
+    portraits = Portrait.get_all()
 
-    return render(request, 'portraits/home.html')
+    return render(request, 'portraits/home.html', {'portraits': portraits})

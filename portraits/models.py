@@ -46,5 +46,10 @@ class Portrait(models.Model):
     def delete_portrait(self):
         self.delete()
 
+    @classmethod
+    def get_all(cls):
+        portrait = cls.objects.get()
+        return portrait
+
     def __str__(self):
         return self.name
