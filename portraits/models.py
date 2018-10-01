@@ -33,7 +33,7 @@ class Category(models.Model):
 
 class Portrait(models.Model):
 
-    image = models.ImageField(blank=True)
+    image = models.ImageField(upload_to='media')
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True)
 
@@ -48,8 +48,8 @@ class Portrait(models.Model):
 
     @classmethod
     def get_all(cls):
-        portrait = cls.objects.get()
-        return portrait
+        port = Portrait.objects.all()
+        return port
 
     def __str__(self):
         return self.name

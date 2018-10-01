@@ -8,4 +8,4 @@ def welcome(request):
 
     portraits = Portrait.get_all()
 
-    return render(request, 'portraits/home.html', {'portraits': portraits})
+    return render(request, "portraits/home.html", {"portraits": portraits})

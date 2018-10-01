@@ -6,13 +6,20 @@
 </head>
 {% block content %}
 
-{% for portrait in portraits %}
-<h1>{{portrait.name}}thg</h1>
-<img src="..."
-     class="rounded-circle">
-<p>{{portrait.description}}</p>
-{% endfor %}
+<div class="portrait d-flex flex-wrap">
+    {% for portrait in portraits %}
+    <div class="col-md-3">
+        <div class="thumb">
+            <p>{{portrait.name}}</p>
+            <img class="img-thumbnail"
+                 src="{{portrait.image.url}}"
+                 alt="No image">
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
+
 
 </html>
