@@ -16,6 +16,12 @@ class Location(models.Model):
     def __str__(self):
         return self.location
 
+    @classmethod
+    def get_all_locations(cls):
+        locations = Location.objects.all()
+        return locations
+
+
 
 class Category(models.Model):
 
@@ -48,8 +54,13 @@ class Portrait(models.Model):
 
     @classmethod
     def get_all(cls):
-        port = Portrait.objects.all()
-        return port
+        portraits = Portrait.objects.all()
+        return portraits
+
+    @classmethod
+    def find_by_location(cls, location):
+        portrait = Portrait.objects.filter(location=location)
+        return portrait
 
     def __str__(self):
         return self.name

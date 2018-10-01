@@ -6,20 +6,37 @@
 </head>
 {% block content %}
 
-<div class="portrait d-flex flex-wrap">
-    {% for portrait in portraits %}
-    <div class="col-md-3">
-        <div class="thumb">
-            <p>{{portrait.name}}</p>
-            <img class="img-thumbnail"
-                 src="{{portrait.image.url}}"
-                 alt="No image">
-        </div>
+<div class="container-fluid">
+
+    <div class="locations">
+
+        {% for location in locations %}
+
+        <ul>
+            <a href="https://www.w3schools.com">
+                <li>{{ location.location}}</li>
+            </a>
+        </ul>
+        {% endfor %}
     </div>
-    {% endfor %}
+
+
+
+    <div class="portrait d-flex flex-wrap">
+        {% for portrait in portraits %}
+        <div class="col-md-3">
+            <div class="thumb">
+                <p>{{portrait.name}}</p>
+                <img class="img-thumbnail"
+                     src="{{portrait.image.url}}"
+                     alt="No image">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endblock %}
+
 </div>
-
-{% endblock %}
-
 
 </html>

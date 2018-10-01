@@ -1,13 +1,14 @@
-from django.conf.urls import url 
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 
 
 # import welcome from views
-from .views import welcome
+from .views import welcome, location
 
 urlpatterns = [
-    url(r'^$', welcome)
+    url(r'^$', welcome),
+    url(r'^location/(?P<location>\d+)', location),
 ]
 
 if settings.DEBUG:
