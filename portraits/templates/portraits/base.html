@@ -10,14 +10,13 @@
     {% bootstrap_css %}
     <link rel="stylesheet"
           href="{% static 'css/base.css' %}">
-
     {% endblock %}
 
 </head>
 
 <body>
     {% include "navbar.html" %}
-    {% comment %} {% include "search.html" %} {% endcomment %}
+    {% include "search.html" %}
 
     {% block content %} <h1 class='text-center'>THE PORTRAIT</h1> {% endblock %}
 

@@ -1,12 +1,12 @@
 {%extends 'portraits/base.html'%}
 
-<div class="locations d-flex flex-wrap">
+<div class="category d-flex flex-wrap">
 
-    {% for location in locations %}
+    {% for category in categories %}
 
     <ul>
         <a href=" ">
-            <li>{{ location.location}}</li>
+            <li>{{ category.category}}</li>
         </a>
     </ul>
     {% endfor %}

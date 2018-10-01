@@ -8,12 +8,12 @@
 
 <div class="container-fluid">
 
-    <div class="locations">
+    <div class="locations d-flex flex-wrap">
 
         {% for location in locations %}
 
         <ul>
-            <a href="https://www.w3schools.com">
+            <a href="/location/{{location.location}}">
                 <li>{{ location.location}}</li>
             </a>
         </ul>

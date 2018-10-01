@@ -22,7 +22,6 @@ class Location(models.Model):
         return locations
 
 
-
 class Category(models.Model):
 
     category = models.CharField(max_length=60, blank=True)
@@ -32,6 +31,11 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
+
+    @classmethod
+    def get_all_category(cls):
+        category = Category.objects.all()
+        return category
 
     def __str__(self):
         return self.category
@@ -59,8 +63,13 @@ class Portrait(models.Model):
 
     @classmethod
     def find_by_location(cls, location):
-        portrait = Portrait.objects.filter(location=location)
+        portrait = Portrait.objects.filter(location__location=location)
         return portrait
+
+    @classmethod
+    def find_by_category(cls, category):
+        category = Portrait.objects.filter(category__category=category)
+        return category
 
     def __str__(self):
         return self.name

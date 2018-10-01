@@ -4,11 +4,12 @@ from django.conf import settings
 
 
 # import welcome from views
-from .views import welcome, location
+from .views import welcome, location, category
 
 urlpatterns = [
     url(r'^$', welcome),
-    url(r'^location/(?P<location>\d+)', location),
+    url(r'^location/(\w+)', location),
+    url(r'^category/(\w+)', category)
 ]
 
 if settings.DEBUG:

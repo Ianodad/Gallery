@@ -21,6 +21,14 @@ def location(request, location):
     return render(request, "portraits/location.html", {"portrait": portrait, "locations": locations})
 
 
+def category(request, category):
+    locations = Location.get_all_locations()
+
+    categories = Portrait.find_by_category(category)
+
+    return render(request, "portraits/location.html", {"portrait": portrait, "locations": locations, "categories": categories})
+
+
 def search(request):
 
     return render(request, "portraits/location.html", {})
