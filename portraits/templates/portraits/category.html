@@ -4,17 +4,48 @@
 
 <div class="category d-flex flex-wrap">
 
-    {% for category in categories %}
+    <div class="chooses d-flex flex-wrap">
+        <div class="dropdown mx-4">
+            <button type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown">
+                Location
+            </button>
+            <div class="dropdown-menu">
+                {% for location in locations %}
+                <a class="dropdown-item"
+                   href="/location/{{location.location}}">{{ location.location }}</a>
+                {% endfor %}
 
-    {{category.category}}
+            </div>
+        </div>
+        <div class="dropdown">
+            <button type="button"
+                    class="btn btn-primary dropdown-toggle"
+                    data-toggle="dropdown">
+                Category
+            </button>
+            <div class="dropdown-menu">
+                {% for cat in categories %}
+                <a class="dropdown-item"
+                   href="/category/{{cat.category}}">{{ cat.category}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
-    {% endfor %}
-
-    {% for port in portrait %}
-
-    {{port.description }}
-
-    {% endfor %}
+    <div class="portrait d-flex flex-wrap">
+        {% for port in portrait %}
+        <div class="col-md-3">
+            <div class="thumb">
+                <p>{{port.name}}</p>
+                <img class="img-thumbnail"
+                     src="{{port.image.url}}"
+                     alt="No image">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
 </div>
 

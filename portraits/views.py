@@ -18,19 +18,22 @@ def welcome(request):
 def location(request, location):
     locations = Location.get_all_locations()
 
+    category = Category.get_all_category()
+
     portrait = Portrait.find_by_location(location)
 
-    return render(request, "portraits/location.html", {"portrait": portrait, "locations": locations})
+    return render(request, "portraits/location.html", {"portrait": portrait, "locations": locations, "category": category})
 
 
 def category(request, category):
     categories = Category.get_all_category()
-    # category = "Hi"
+
+    locations = Location.get_all_locations()
 
     portrait = Portrait.find_by_category(category)
 
     # print(portrait)
-    return render(request, "portraits/category.html", {"categories": categories, "portrait": portrait})
+    return render(request, "portraits/category.html", {"categories": categories, "portrait": portrait, "locations": locations})
 
 
 def search(request):
