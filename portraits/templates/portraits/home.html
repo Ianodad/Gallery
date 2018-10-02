@@ -17,6 +17,7 @@
                 </button>
                 <button type="button"
                         class="btn btn-primary dropdown-toggle"
+                        category
                         data-toggle="dropdown">
                     Location
                 </button>
@@ -25,6 +26,14 @@
 
                     <a class="dropdown-item"
                        href="/location/{{location.location}}">{{ location.location}}</a>
+                    {% endfor %}
+
+                </div>
+                <div class="dropdown-menu">
+                    {% for cat in category %}
+
+                    <a class="dropdown-item"
+                       href="/category/{{category.category}}">{{ cat.category}}</a>
                     {% endfor %}
 
                 </div>

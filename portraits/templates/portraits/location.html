@@ -1,13 +1,10 @@
-{%extends 'portraits/base.html'%}
-
-
 <div class="locations d-flex flex-wrap">
 
     {% for location in locations %}
 
     <ul>
         <a href=" ">
-            <li>{{ location.location}}</li>
+            <li>{{ location.name}}</li>
         </a>
     </ul>
     {% endfor %}

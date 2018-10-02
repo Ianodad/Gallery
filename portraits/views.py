@@ -8,9 +8,12 @@ def welcome(request):
 
     portraits = Portrait.get_all()
 
+    category = Category.get_all_category()
+
+
     locations = Location.get_all_locations()
 
-    return render(request, "portraits/home.html", {"portraits": portraits, "locations": locations})
+    return render(request, "portraits/home.html", {"portraits": portraits, "locations": locations, "category": category })
 
 
 def location(request, location):
@@ -24,7 +27,7 @@ def location(request, location):
 def category(request, category):
     category = Category.get_all_category()
 
-    portrait = Portrait.find_by_category(category)
+    portrait = Portrait.objects.filter(category__category=category)
 
     return render(request, "portraits/category.html", {"category": category, "portrait": portrait})
 

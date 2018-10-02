@@ -42,7 +42,6 @@ class Category(models.Model):
 
 
 class Portrait(models.Model):
-
     image = models.ImageField(upload_to='media')
     name = models.CharField(max_length=60)
     description = models.TextField(blank=True)
