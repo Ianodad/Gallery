@@ -38,14 +38,14 @@ def category(request, category):
 
 def search(request):
 
-      if 'portrait' in request.GET and request.GET["portrait"]:
-          search_anime = request.GET.get("portrait")
-          searched = Portrait.search_by_name(search_anime)
-          message = f"{searched_name}"
+    if 'portrait' in request.GET and request.GET["portrait"]:
+        search_anime = request.GET.get("portrait")
+        searched = Portrait.search_by_name(search_anime)
+        message = f"{searched_name}"
 
-          return render(request, 'portraits/search.html', {"message": message, "portrait": searched})
+        return render(request, 'portraits/search.html', {"message": message, "portrait": searched})
 
-        else: 
-            message = "You havent searched for any term"
+    else: 
+        message = "You havent searched for any term"
 
         return render(request, "portraits/search.html", {"message":message })
