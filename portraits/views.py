@@ -22,7 +22,7 @@ def location(request, location):
 
 
 def category(request, category):
-    locations = Location.get_all_locations()
+    category = Category.get_all_category()
 
     categories = Portrait.find_by_category(category)
 
