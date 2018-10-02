@@ -13,6 +13,10 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
+    def update_loaction(self, update):
+        self.anime_loaction = update
+        self.save()
+
     def __str__(self):
         return self.location
 
@@ -31,6 +35,10 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
+
+    def update_category(self, update):
+        self.anime_category = update
+        self.save()
 
     @classmethod
     def get_all_category(cls):
@@ -55,6 +63,10 @@ class Portrait(models.Model):
     def delete_portrait(self):
         self.delete()
 
+    def update_portrait(self, update):
+        self.anime_portrait = update
+        self.save()
+
     @classmethod
     def get_all(cls):
         portraits = Portrait.objects.all()
@@ -69,6 +81,11 @@ class Portrait(models.Model):
     def find_by_category(cls, category):
         category = Portrait.objects.filter(category__category=category)
         return category
+
+    @classmethod
+    def search_by_name(cls, anime):
+        portrait = Portrait.objects.filter(name_icontains=anime)
+        return portrait
 
     def __str__(self):
         return self.name
