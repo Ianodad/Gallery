@@ -24,9 +24,9 @@ def location(request, location):
 def category(request, category):
     category = Category.get_all_category()
 
-    categories = Portrait.find_by_category(category)
+    portrait = Portrait.find_by_category(category)
 
-    return render(request, "portraits/location.html", {"portrait": portrait, "locations": locations, "categories": categories})
+    return render(request, "portraits/category.html", {"category": category, "portrait": portrait})
 
 
 def search(request):

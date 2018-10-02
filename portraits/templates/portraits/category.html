@@ -1,5 +1,7 @@
 {%extends 'portraits/base.html'%}
 
+{% block content %}
+
 <div class="category d-flex flex-wrap">
 
     {% for category in categories %}
@@ -17,3 +19,4 @@
 
     {% endfor %}
 </div>
+{% endblock %}

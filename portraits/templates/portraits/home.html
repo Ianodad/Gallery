@@ -1,25 +1,40 @@
 {%extends 'portraits/base.html'%}
 
-
-
 {% block content %}
 
 <div class="container-fluid">
 
     <h1 class="display-4 text-center">ANIME WALLPAPER</h1>
 
-    <div class="locations d-flex flex-wrap">
 
-        {% for location in locations %}
+    <div class="container">
+        <div class="btn-group">
+            <div class="btn-group">
+                <button type="button"
+                        class="btn btn-primary dropdown-toggle"
+                        data-toggle="dropdown">
+                    Category
+                </button>
+                <button type="button"
+                        class="btn btn-primary dropdown-toggle"
+                        data-toggle="dropdown">
+                    Location
+                </button>
+                <div class="dropdown-menu">
+                    {% for location in locations %}
 
-        <ul>
-            <a href="/location/{{location.location}}">
-                <li>{{ location.location}}</li>
-            </a>
-        </ul>
-        {% endfor %}
+                    <a class="dropdown-item"
+                       href="/location/{{location.location}}">{{ location.location}}</a>
+                    {% endfor %}
+
+                </div>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item"
+                       href="#">Tablet</a>
+                </div>
+            </div>
+        </div>
     </div>
-
 
 
     <div class="portrait d-flex flex-wrap">
@@ -35,8 +50,8 @@
         {% endfor %}
     </div>
 
-    {% endblock %}
 
 </div>
+{% endblock %}
 
 </html>
