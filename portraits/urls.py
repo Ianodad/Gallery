@@ -8,7 +8,7 @@ from .views import welcome, location, category
 
 urlpatterns = [
     url(r'^$', welcome),
-    url(r'^location/(\w+)', location ,name='location'),
+    url(r'^location/(\w+)', location),
     url(r'^category/(\w+)', category)
 ]
 

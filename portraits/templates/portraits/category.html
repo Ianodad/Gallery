@@ -1,13 +1,21 @@
+{%extends 'portraits/base.html'%}
+
+{% block content %}
+
 <div class="category d-flex flex-wrap">
 
-    {% for category in portrait %}
+    {% for category in categories %}
 
-    <ul>
-        <a href="/category/{{ category.category}}">
-            <li>{{ category.category}}</li>
-        </a>
-    </ul>
+    {{category.category}}
+
     {% endfor %}
 
+    {% for port in portrait %}
+
+    {{port.description }}
+
+    {% endfor %}
 
 </div>
+
+{% endblock %}
