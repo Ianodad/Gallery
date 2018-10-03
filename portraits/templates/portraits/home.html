@@ -43,8 +43,8 @@
         {% for portrait in portraits %}
 
         <div class="col-md-3">
-            <div class="thumb data-toggle="
-                 modal"
+            <div class="thumb"
+                 data-toggle="modal"
                  data-target="#moredetails">
                 <h1>{{portrait.name}}</h1>
                 <img class="
@@ -53,12 +53,11 @@
                      alt="No image">
             </div>
         </div>
-        {% endfor %}
-
-        <div class="col-md-3 modal fade id="
-             moredetails"
+        <div class="col-md-3 modal fade"
+             id="moredetails"
              tabindex="-1"
              role="dialog"
+             data-dismiss="modal"
              aria-labelledby="exampleModalCenterTitle"
              aria-hidden="true">
             <div class="thumb">
@@ -68,6 +67,9 @@
                      alt="No image">
             </div>
         </div>
+        {% endfor %}
+
+
     </div>
 
 
