@@ -3,3 +3,12 @@
 p {
     color: green;
 }
+
+.navbar {
+    background-color: #8B0000;
+
+}
+
+.navbar-brand {
+    font-size: 3em;
+}

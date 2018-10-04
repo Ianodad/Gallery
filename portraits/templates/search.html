@@ -1,26 +1,10 @@
 <div class="search d-flex flex-wrap justify-content-center m-4">
-    <div class="search-bar">
-        <form id="searchForm"
-              method="post">
-            <fieldset>
-
-                <input id="s"
-                       type="text" />
-
-                <input type="submit"
-                       value="Submit"
-                       id="submitButton" />
-
-                <div id="searchInContainer">
-                    <input type="radio"
-                           name="check"
-                           value="site"
-                           id="searchSite"
-                           checked />
-                    <label for="searchSite"
-                           id="siteNameLabel">Search</label>
-                </div>
-            </fieldset>
-        </form>
-    </div>
+    <form class="form-inline md-form mr-auto mb-4">
+        <input class="form-control mr-sm-2"
+               type="text"
+               placeholder="Search"
+               aria-label="Search">
+        <button class="btn btn-elegant btn-rounded btn-sm my-0 btn-outline-danger"
+                type="submit">Search</button>
+    </form>
 </div>
