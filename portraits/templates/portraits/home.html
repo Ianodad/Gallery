@@ -31,7 +31,7 @@
                 <div class="dropdown-menu">
                     {% for cat in category %}
                     <a class="dropdown-item"
-                       href="/category/{{category.category}}">{{ cat.category}}</a>
+                       href="/category/{{cat.category}}">{{ cat.category}}</a>
                     {% endfor %}
                 </div>
             </div>
@@ -86,21 +86,6 @@
                 </div>
             </div>
         </div>
-        {% comment %} <div class="col-md-3 modal fade modal-dialog"
-             id="{{portrait.name}}"
-             tabindex="-1"
-             role="dialog"
-             data-dismiss="modal"
-             aria-labelledby="exampleModalCenterTitle"
-             aria-hidden="true">
-            <div class="thumb">
-                <h1 class="text-center">{{portrait.name}}</h1>
-                <img class="img-thumbnail"
-                     src="{{portrait.image.url}}"
-                     alt="No image">
-            </div>
-        </div> {% endcomment %}
-
         {% endfor %}
         {% for portrait in portraits %}
 
